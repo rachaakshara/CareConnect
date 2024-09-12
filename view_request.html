@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Request Details</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/styles.css') }}">
+</head>
+<body>
+    <header>
+        <h1>Request Details</h1>
+    </header>
+    <nav>
+        <a href="/">Home</a>
+        <a href="/logout">Logout</a>
+    </nav>
+    <div class="container">
+        <h2>Recipient Details</h2>
+        <p><strong>Recipient Name:</strong> {{ request_info['recipient'] }}</p>
+        <p><strong>Medicine Name:</strong> {{ request_info['medicine'] }}</p>
+        <p><strong>Details:</strong> {{ request_info['details'] }}</p>
+        <p><strong>Prescription:</strong> <a href="{{ url_for('static', filename='uploads/' ~ request_info['prescription']) }}" download>Download Prescription</a></p>
+    </div>
+</body>
+</html>
